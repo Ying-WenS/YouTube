@@ -1,18 +1,7 @@
 import React from "react";
 import { Link, Route } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-const Nav = ({}) => {
-  // state={
-  //   term: "Default text"
-  // };
-  const inputHandler = (event) => {
-    console.log(event.target.value);
-  };
-  const search_btn = (event) => {
-    console.log(event.target.value);
-  };
 
+const Nav = ({}) => {
   return (
     <nav>
       <div id="start">
@@ -24,8 +13,8 @@ const Nav = ({}) => {
       </div>
       <div id="center">
         <div className="container">
-          <input onChange={inputHandler} placeholder="搜尋" type="text" />
-          <button onClick={search_btn} id="search_btn">
+          <input placeholder="搜尋" type="text" />
+          <button id="search_btn">
             <i id="search_icon" class="fas fa-search"></i>{" "}
           </button>
         </div>
