@@ -3,9 +3,16 @@ import React from "react";
 const Video = ({ data }) => {
   return (
     <div className="video">
-      <h5>{data}</h5>
-      <p>{data.items.snippet}</p>
-      <p>{data.kind}</p>
+      <video src=""></video>
+
+      <div id="controls">
+        <button className="palyer_btn">
+          <i class="fas fa-play"></i>
+        </button>
+      </div>
+      <h5></h5>
+      <p></p>
+      <p></p>
       <p>觀看次數</p>
       <span>前</span>
     </div>
