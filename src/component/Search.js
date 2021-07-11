@@ -3,31 +3,6 @@ import React from "react";
 import React, { useState, useEffect } from "react";
 
 const Search = (search_btn) => {
-  let [input, setInput] = useState("");
-  const inputHandler = (event) => {
-    console.log(event.target.value);
-  };
-
-  const search_btn = async (termFromSearchBar) => {
-    let dataRes = await axios.get(
-      {
-        params: {
-          q: termFromSearchBar,
-        },
-      }
-        .then((res) => {
-          console.log(res);
-        })
-        .catch((error) => {
-          console.log(error);
-          console.log("connect failed");
-        })
-    );
-    const search_btn = (event) => {
-      console.log(event.target.value);
-    };
-  };
-
   return (
     <div>
       <div className="container">

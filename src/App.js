@@ -7,15 +7,6 @@ import { useState, useEffect } from "react";
 
 function App() {
   const [input, setInput] = useState("");
-  // let [data, setData] = useState(null);
-  //  search_btn= sync (termFromSearchBar)=>{
-  //    const res=await axios.get("",
-  //      params:{
-  //        q: termFromSearchBar
-  //      }
-  //     })
-
-  //  }
 
   return (
     <div className="App">
