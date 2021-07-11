@@ -3,10 +3,10 @@ import React from "react";
 const Video = ({ data }) => {
   return (
     <div className="video">
-      <div id="controls">
-        <button className="palyer_btn">
-          <i class="fas fa-play"></i>
-        </button>
+      <img src={data.snippet.thumbnails.medium.url} alt="" />
+      <div>
+        <p className="title">{data.snippet.title}</p>
+        <p className="channelTitle">{data.snippet.channelTitle}</p>
       </div>
     </div>
   );

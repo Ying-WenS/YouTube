@@ -1,32 +1,25 @@
 import React from "react";
-import { Link, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
+import Search from "./Search";
+import { useState, useEffect } from "react";
+import axiosIns from "../api/axiosIns";
 
 const Nav = ({}) => {
   return (
     <nav>
       <div id="start">
-        <i id="guide_icon" class="fas fa-align-justify"></i>
-        <i id="logo_icon" class="fab fa-youtube">
+        <i id="guide_icon" className="fas fa-align-justify"></i>
+        <i id="logo_icon" className="fab fa-youtube">
           <span>YouTube</span>
         </i>
         <b className="tw">TW</b>
       </div>
-      <div id="center">
-        <div className="container">
-          <input placeholder="搜尋" type="text" />
-          <button id="search_btn">
-            <i id="search_icon" class="fas fa-search"></i>{" "}
-          </button>
-        </div>
-        <div id="mic_icon">
-          <i class="fas fa-microphone"></i>
-        </div>
-      </div>
+      <div id="center">{/* <Search /> */}</div>
       <div id="end">
         <div className="icons">
-          <i id="fun_icon" class="fas fa-angle-double-down"></i>
-          <i id="create_icon" class="fas fa-plus-square"></i>
-          <i id="bell_icon" class="fas fa-bell"></i>
+          <i id="fun_icon" className="fas fa-angle-double-down"></i>
+          <i id="create_icon" className="fas fa-plus-square"></i>
+          <i id="bell_icon" className="fas fa-bell"></i>
         </div>
         <img
           id="person_pic"
