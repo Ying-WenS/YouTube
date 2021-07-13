@@ -1,21 +1,43 @@
+import React, { useState, useEffect } from "react";
 import axiosIns from "../api/axiosIns";
-import React from "react";
-import { useState, useEffect } from "react";
 
-const Search = ({ search_btn, setInput }) => {
-  const inputHandler = (event) => {
-    setInput(event.target.value);
+const Search = (props) => {
+  const [input, setInput] = useState("音樂");
+
+  const search_btn = () => {
+    axiosIns
+      .get("", {
+        params: {
+          q: input,
+        },
+      })
+      .then((res) => {
+        console.log(res.data.items);
+        props.setVideoList(res.data.items);
+        console.log("成功");
+      })
+      .catch((error) => {
+        console.log(error);
+        console.log("failed");
+      });
   };
+  useEffect(() => {
+    search_btn();
+  }, []);
   return (
-    <div>
+    <div className="big_container">
       <div className="container">
-        <input onChange={inputHandler} placeholder="搜尋" type="text" />
+        <input
+          onChange={(event) => setInput(event.target.value)}
+          placeholder="搜尋"
+          type="text"
+        />
         <button onClick={search_btn} id="search_btn">
           <i id="search_icon" className="fas fa-search"></i>{" "}
         </button>
-      </div>
-      <div id="mic_icon">
-        <i className="fas fa-microphone"></i>
+        <div id="mic_icon">
+          <i className="fas fa-microphone"></i>
+        </div>
       </div>
     </div>
   );
